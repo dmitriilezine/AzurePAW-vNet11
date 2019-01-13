@@ -180,7 +180,7 @@
     "aadConnectSubnetID": "[concat(variables('vnetID'),'/subnets/',variables('aadConnectSubnetName'))]",
     "testADDSSubnetName": "testADDSSubnet",
     "testADDSSubnetID": "[concat(variables('vnetID'),'/subnets/',variables('testADDSSubnetName'))]",
-    "gatewaySubnetName": "Gateway",
+    "gatewaySubnetName": "GatewaySubnet",
     "gatewaySubnetID": "[concat(variables('vnetID'),'/subnets/',variables('gatewaySubnetName'))]",
 
     "subnets": [
@@ -327,15 +327,7 @@
       {
         "name": "[variables('gatewaySubnetName')]",
         "properties": {
-          "addressPrefix": "[variables('gatewayNetworkSubnet')]",
-          "networkSecurityGroup": {
-            "id": "[variables('aadConnectNSGID')]"
-          },
-          "serviceEndpoints": [
-            {
-              "service": "Microsoft.Storage"
-            }
-          ]
+          "addressPrefix": "[variables('gatewayNetworkSubnet')]"
         }
       }
     ]
@@ -383,10 +375,7 @@
           "testADDSNSGName": { "value": "[variables('testADDSNSGName')]" },
           "testADDSSubnetName": { "value": "[variables('testADDSSubnetName')]" },
           "testADDSSubnetId": { "value": "[variables('testADDSSubnetID')]" },
-          "gatewayNSGName": { "value": "[variables('gatewayNSGName')]" },
-          "gatewaySubnetName": { "value": "[variables('gatewaySubnetName')]" },
-          "gatewaySubnetId": { "value": "[variables('gatewaySubnetID')]" },
-          
+                    
           "sourceClientIP": { "value": "[variables('sourceClientIP')]" }
         }
       }

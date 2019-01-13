@@ -40,10 +40,7 @@
     "testADDSNSGName": { "type": "string" },
     "testADDSSubnetName": { "type": "string" },
     "testADDSSubnetId": { "type": "string" },
-    "gatewayNSGName": { "type": "string" },
-    "gatewaySubnetName": { "type": "string" },
-    "gatewaySubnetId": { "type": "string" },
-
+    
     "sourceClientIP": { "type": "string" }
 
   },
@@ -58,7 +55,7 @@
     "aadProxySubnetRange": "[parameters('subnets')[7].properties.addressPrefix]",
     "aadConnectSubnetRange": "[parameters('subnets')[8].properties.addressPrefix]",
     "testADDSSubnetRange": "[parameters('subnets')[9].properties.addressPrefix]",
-    "gatewaySubnetRange": "[parameters('subnets')[10].properties.addressPrefix]",
+    
     "location": "[resourceGroup().location]"
   },
   "resources": [
